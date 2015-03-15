@@ -87,7 +87,8 @@ headOr _ (h :. _) = h
 product ::
   List Int
   -> Int
-product a = foldLeft (*) 1 a
+product =
+  foldLeft (*) 1
 
 -- | Sum the elements of the list.
 --
@@ -101,7 +102,8 @@ product a = foldLeft (*) 1 a
 sum ::
   List Int
   -> Int
-sum a = foldLeft (+) 0 a
+sum =
+  foldLeft (+) 0
 
 -- | Return the length of the list.
 --
@@ -187,6 +189,7 @@ infixr 5 ++
 flatten ::
   List (List a)
   -> List a
+flatten Nil = Nil
 flatten (a :. b) = foldLeft (++) a b
 
 -- | Map a function then flatten to a list.
